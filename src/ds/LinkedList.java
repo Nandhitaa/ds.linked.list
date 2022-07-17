@@ -2,12 +2,12 @@ package ds;
 
 public class LinkedList<T extends Comparable<T>> implements List<T> {
 
-	private Node<T> root;
+	private LinkedListNode<T> root;
 	private int noOfItems;
 
 	@Override
 	public void insertBegining(T data) {
-		Node<T> newNode = new Node<T>(data);
+		LinkedListNode<T> newNode = new LinkedListNode<T>(data);
 		if (this.root == null) {
 			root = newNode;
 		}
@@ -20,12 +20,12 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
 
 	@Override
 	public void insertEnd(T data) {
-		Node<T> newNode = new Node<T>(data);
+		LinkedListNode<T> newNode = new LinkedListNode<T>(data);
 		if(root == null) {
 			root = newNode;
 		}
 		else {
-			Node<T> current = root;
+			LinkedListNode<T> current = root;
 			while(current.getNextNode() != null) {
 				current = current.getNextNode();
 			}
@@ -43,8 +43,8 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
 			noOfItems--;
 		}
 		else {
-			Node<T> prev = null;
-			Node<T> curr = root;
+			LinkedListNode<T> prev = null;
+			LinkedListNode<T> curr = root;
 			while(curr != null) {
 				if(curr.getData().compareTo(data) == 0) {
 					prev.setNextNode(curr.getNextNode());
@@ -60,7 +60,7 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
 
 	@Override
 	public void traverse() {
-		Node<T> currentNode = this.root;
+		LinkedListNode<T> currentNode = this.root;
 		while (currentNode != null) {
 			System.out.print(currentNode.toString() + "->");
 			currentNode = currentNode.getNextNode();

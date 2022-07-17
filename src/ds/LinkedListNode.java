@@ -1,11 +1,11 @@
 package ds;
 
-public class Node<T extends Comparable<T>> {
+public class LinkedListNode<T extends Comparable<T>> {
 
 	private T data;
-	private Node<T> nextNode;
+	private LinkedListNode<T> nextNode;
 
-	public Node(T data) {
+	public LinkedListNode(T data) {
 		this.data = data;
 	}
 
@@ -17,11 +17,11 @@ public class Node<T extends Comparable<T>> {
 		this.data = data;
 	}
 
-	public Node<T> getNextNode() {
+	public LinkedListNode<T> getNextNode() {
 		return nextNode;
 	}
 
-	public void setNextNode(Node<T> nextNode) {
+	public void setNextNode(LinkedListNode<T> nextNode) {
 		this.nextNode = nextNode;
 	}
 

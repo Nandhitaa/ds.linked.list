@@ -1,0 +1,43 @@
+package basic;
+
+import ds.ListNode;
+import ds.Traversal;
+
+public class MiddleNode {
+
+	private ListNode getMiddleNode(ListNode root) {
+
+		ListNode slow = root;
+		ListNode fast = root;
+
+		while (fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+
+		return slow;
+	}
+
+	public static void main(String[] args) {
+
+		ListNode root = new ListNode(1);
+
+		ListNode node2 = new ListNode(2);
+		ListNode node3 = new ListNode(3);
+		ListNode node4 = new ListNode(4);
+		ListNode node5 = new ListNode(5);
+
+		root.next = node2;
+		node2.next = node3;
+		node3.next = node4;
+		node4.next = node5;
+
+		MiddleNode obj = new MiddleNode();
+
+		ListNode result = obj.getMiddleNode(root);
+
+		Traversal.traverse(root);
+		System.out.println(result.data);
+	}
+
+}
